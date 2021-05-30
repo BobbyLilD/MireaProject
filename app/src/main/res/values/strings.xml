@@ -15,4 +15,9 @@
     <string name="browser">Browser</string>
     <string name="calculator">Calculator</string>
     <string name="music_player">Music Player</string>
+    <string name="sensors">Sensors</string>
+    <string name="make_photo">Make Photo</string>
+    <string name="record_audio">Record Audio</string>
+    <string name="stories">Stories</string>
+    <string name="settings">Settings</string>
 </resources>

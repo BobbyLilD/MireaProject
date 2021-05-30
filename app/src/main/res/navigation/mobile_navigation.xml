@@ -37,4 +37,29 @@
         android:name="ru.mirea.steblin_e_v.mireaproject.MusicPlayer"
         android:label="fragment_music_player"
         tools:layout="@layout/fragment_music_player" />
+    <fragment
+        android:id="@+id/nav_sensors"
+        android:name="ru.mirea.steblin_e_v.mireaproject.Sensors"
+        android:label="fragment_sensors"
+        tools:layout="@layout/fragment_sensors" />
+    <fragment
+        android:id="@+id/nav_makePhoto"
+        android:name="ru.mirea.steblin_e_v.mireaproject.makePhoto"
+        android:label="fragment_make_photo"
+        tools:layout="@layout/fragment_make_photo" />
+    <fragment
+        android:id="@+id/nav_recordAudio"
+        android:name="ru.mirea.steblin_e_v.mireaproject.recordAudio"
+        android:label="fragment_record_audio"
+        tools:layout="@layout/fragment_record_audio" />
+    <fragment
+        android:id="@+id/nav_stories"
+        android:name="ru.mirea.steblin_e_v.mireaproject.Stories"
+        android:label="fragment_stories"
+        tools:layout="@layout/fragment_stories" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="ru.mirea.steblin_e_v.mireaproject.Settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

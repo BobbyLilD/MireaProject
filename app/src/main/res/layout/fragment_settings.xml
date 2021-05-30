@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings" >
+
+    <EditText
+        android:id="@+id/editSetFour"
+        android:layout_width="83dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toEndOf="@+id/setOneName"
+        app:layout_constraintTop_toBottomOf="@+id/editSetThree" />
+
+    <EditText
+        android:id="@+id/editSetThree"
+        android:layout_width="83dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toEndOf="@+id/setOneName"
+        app:layout_constraintTop_toBottomOf="@+id/editSetTwo" />
+
+    <TextView
+        android:id="@+id/setFourName"
+        android:layout_width="273dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="40dp"
+        android:text="Setting 4 (values: 1-10)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setThreeName" />
+
+    <TextView
+        android:id="@+id/setThreeName"
+        android:layout_width="273dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="40dp"
+        android:text="Setting 3 (values: 1-10)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setTwoName" />
+
+    <TextView
+        android:id="@+id/setTwoName"
+        android:layout_width="273dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="40dp"
+        android:text="Setting 2 (values: 1-10)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setOneName" />
+
+    <TextView
+        android:id="@+id/settings_Top"
+        android:layout_width="273dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="32dp"
+        android:text="SETTINGS"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/setOneName"
+        android:layout_width="273dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="68dp"
+        android:text="Setting 1 (values: 1-10)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_Top" />
+
+    <EditText
+        android:id="@+id/editSetOne"
+        android:layout_width="83dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toEndOf="@+id/setOneName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editSetTwo"
+        android:layout_width="83dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toEndOf="@+id/setOneName"
+        app:layout_constraintTop_toBottomOf="@+id/editSetOne" />
+
+    <Button
+        android:id="@+id/saveSettingsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.614" />
+</androidx.constraintlayout.widget.ConstraintLayout>
