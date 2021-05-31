@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,23 +61,6 @@ public class Settings extends Fragment {
         act = getActivity();
         preferences = act.getPreferences(Context.MODE_PRIVATE);
 
-        Button btn = act.findViewById(R.id.saveSettingsBtn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onSave();
-            }
-        });
-
-        edit1 = act.findViewById(R.id.editSetOne);
-        edit2 = act.findViewById(R.id.editSetTwo);
-        edit3 = act.findViewById(R.id.editSetThree);
-        edit4 = act.findViewById(R.id.editSetFour);
-
-        edit1.setText(preferences.getString("edit1", "1"));
-        edit2.setText(preferences.getString("edit2", "1"));
-        edit2.setText(preferences.getString("edit3", "1"));
-        edit2.setText(preferences.getString("edit4", "1"));
     }
 
     public void onSave(){
@@ -91,7 +75,31 @@ public class Settings extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        Button btn = view.findViewById(R.id.saveSettingsBtn);
+        if (btn == null){
+            Log.d("WARN", "btn == null");
+        }
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSave();
+            }
+        });
+
+        edit1 = view.findViewById(R.id.editSetOne);
+        edit2 = view.findViewById(R.id.editSetTwo);
+        edit3 = view.findViewById(R.id.editSetThree);
+        edit4 = view.findViewById(R.id.editSetFour);
+
+        edit1.setText(preferences.getString("edit1", "1"));
+        edit2.setText(preferences.getString("edit2", "1"));
+        edit3.setText(preferences.getString("edit3", "1"));
+        edit4.setText(preferences.getString("edit4", "1"));
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        return view;
+
+
     }
 }

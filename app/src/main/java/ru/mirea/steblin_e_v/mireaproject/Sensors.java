@@ -6,8 +6,10 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -52,6 +54,7 @@ public class Sensors extends Fragment implements SensorEventListener {
         return fragment;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,18 +69,21 @@ public class Sensors extends Fragment implements SensorEventListener {
         stationarySensor = sensorManager.getDefaultSensor(Sensor.TYPE_STATIONARY_DETECT);
         motionSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MOTION_DETECT);
 
-        motionTextView = act.findViewById(R.id.motionValue);
-        stationaryTextView = act.findViewById(R.id.statValue);
-        azimuthTextView = act.findViewById(R.id.accelAzimuth);
-        pitchTextView = act.findViewById(R.id.accelPitch);
-        rollTextView = act.findViewById(R.id.accelRoll);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_sensors, container, false);
+
+        motionTextView = view.findViewById(R.id.motionValue);
+        stationaryTextView = view.findViewById(R.id.statValue);
+        azimuthTextView = view.findViewById(R.id.accelAzimuth);
+        pitchTextView = view.findViewById(R.id.accelPitch);
+        rollTextView = view.findViewById(R.id.accelRoll);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sensors, container, false);
+        return view;
     }
 
     @Override

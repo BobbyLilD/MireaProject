@@ -80,13 +80,7 @@ public class makePhoto extends Fragment {
                     REQUEST_CODE_PERMISSION_CAMERA);
         }
 
-        Button btn = act.findViewById(R.id.photoBtn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                imageViewOnClick();
-            }
-        });
+
     }
 
     public void imageViewOnClick(){
@@ -118,7 +112,17 @@ public class makePhoto extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_make_photo, container, false);
+
+        Button btn = view.findViewById(R.id.photoBtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageViewOnClick();
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_make_photo, container, false);
+        return view;
     }
 }

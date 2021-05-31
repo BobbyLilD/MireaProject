@@ -88,9 +88,17 @@ public class recordAudio extends Fragment {
         }
         mediaRecorder = new MediaRecorder();
 
-        startBtn = act.findViewById(R.id.startRecBtn);
-        stopBtn = act.findViewById(R.id.stopRecBtn);
-        listenBtn = act.findViewById(R.id.playRecBtn);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_record_audio, container, false);
+
+        startBtn = view.findViewById(R.id.startRecBtn);
+        stopBtn = view.findViewById(R.id.stopRecBtn);
+        listenBtn = view.findViewById(R.id.playRecBtn);
 
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,13 +124,8 @@ public class recordAudio extends Fragment {
                 onPlayRecording();
             }
         });
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_record_audio, container, false);
+        return view;
     }
 
     public static boolean hasPermissions(Context context, String[] permissions){

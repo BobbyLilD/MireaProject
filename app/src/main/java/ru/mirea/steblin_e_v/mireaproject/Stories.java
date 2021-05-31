@@ -61,15 +61,24 @@ public class Stories extends Fragment {
         storyDao = database.storyDao();
 
         act = getActivity();
-        recyclerView = act.findViewById(R.id.cycleView);
-
-        Adapter adapter = new Adapter(act, storyDao.getAll());
-        recyclerView.setAdapter(adapter);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_stories, container, false);
+
+        recyclerView = view.findViewById(R.id.cycleView);
+
+        Adapter adapter = new Adapter(act, storyDao.getAll());
+        recyclerView.setAdapter(adapter);
+        FloatingActionButton floatingActionButton = view.findViewById(R.id.floatingMakeStory);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onFloatPress();
+            }
+        });
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_stories, container, false);
     }

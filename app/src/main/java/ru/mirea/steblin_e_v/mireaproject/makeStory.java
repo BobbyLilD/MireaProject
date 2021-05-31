@@ -98,14 +98,6 @@ public class makeStory extends Fragment {
             startActivityForResult(cameraIntent, CAMERA_REQUEST);
         }
 
-        Button btn = act.findViewById(R.id.saveStoryBtn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onSave();
-                Toast.makeText(act, "Story saved!", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     public void onSave(){
@@ -117,7 +109,19 @@ public class makeStory extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_make_story, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_make_story, container, false);
+
+        Button btn = view.findViewById(R.id.saveStoryBtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSave();
+                Toast.makeText(act, "Story saved!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return view;
     }
 
     private File createImageFile() throws IOException {
